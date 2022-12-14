@@ -1,0 +1,8 @@
+{
+  "name": "rntemplate",
+  "version": "1.0",
+  "description": "React Native Template for code experts",
+  "repository": "git@github.com:Code-Experts-Ltd/rn-template.git",
+  "author": "Muhammad Asim <asimjsx@gmail.com>",
+  "license": "MIT"
+}

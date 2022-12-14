@@ -1,0 +1,14 @@
+/node_modules/*
+/public/*
+/.next/*
+ios/Pods
+ios/build
+__tests__
+android/*
+ios/*
+Gemfile
+Gemfile.lock
+package.json
+package-lock.json
+README.md
+yarn.lock
