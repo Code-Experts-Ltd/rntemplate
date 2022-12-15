@@ -1,6 +1,6 @@
 module.exports = {
 
-    placeholderName: "rntemplate",
+    placeholderName: "ProjectName",
   
     // Directory with template
     templateDir: "./template",
