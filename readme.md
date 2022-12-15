@@ -10,7 +10,7 @@ This is a baisc template to quickstart the react native project. It has the foll
 Get started with this template easily with the official react-native package by the following command. Replace YourAppName with your custom name
 
 ```
-$ npx react-native init YourAppName --template https://github.com/Code-Experts-Ltd/rntemplate.git
+npx react-native init YourAppName --template https://github.com/Code-Experts-Ltd/rntemplate.git
 ```
 
 
