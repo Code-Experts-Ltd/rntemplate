@@ -7,7 +7,7 @@ This is a baisc template to quickstart the react native project. It has the foll
 
 ## Documentation
 
-Get started with this template easily with the official react-native package by the following command
+Get started with this template easily with the official react-native package by the following command. Replace YourAppName with your custom name
 
 ```
 npx react-native init YourAppName https://github.com/Code-Experts-Ltd/rntemplate.git
