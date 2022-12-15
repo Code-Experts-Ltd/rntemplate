@@ -1,7 +1,7 @@
 
 # RN Template
 
-This is a baisc template to quickstart the react native project. It has the following components 
+This is a baisc template to quickstart the react native project
 
 
 
