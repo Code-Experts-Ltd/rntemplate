@@ -4,4 +4,5 @@ export default Color = {
     black: '#000',
     white: '#fff',
     red: 'red',
+    background: '#A4AAC9',
 }

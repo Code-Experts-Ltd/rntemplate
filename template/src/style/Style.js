@@ -41,4 +41,9 @@ export default Style = StyleSheet.create({
     fontBold: {
         fontWeight: 'bold',
     },
+    profileImage: {
+        width: 70,
+        height: 70,
+        borderRadius: 10,
+    },
 })
