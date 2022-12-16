@@ -29,12 +29,13 @@ Following components have been added in the project. Please mention any new comp
 * Network Client
 * Svg Component
 * Async Storage
+* Redux
+* HomePage | Profile | Drawer 
+
 ## Upcomming
 
 Following features will be added in the future
 
-* Redux
-* HomePage | Profile | Drawer 
 
 ## Contributing
 
