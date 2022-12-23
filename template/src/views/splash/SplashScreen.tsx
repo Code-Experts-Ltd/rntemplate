@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../../app/userSlice'
 import Color from '../../style/Color'
 
-export default SplashScreen = ({}) => {
+const SplashScreen = ({}) => {
     const navigation = useNavigation()
 
     const dispatch = useDispatch()
@@ -31,6 +31,7 @@ export default SplashScreen = ({}) => {
         </>
     )
 }
+export default SplashScreen
 
 const style = StyleSheet.create({
     container: {
