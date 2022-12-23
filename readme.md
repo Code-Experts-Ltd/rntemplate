@@ -31,6 +31,7 @@ Following components have been added in the project. Please mention any new comp
 * Async Storage
 * Redux
 * HomePage | Profile | Drawer 
+* Typescript Support
 
 ## Upcomming
 
