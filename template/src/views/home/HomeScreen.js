@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { FlatList, Image, Text, View } from 'react-native';
-import Style from '../../style/Style';
-import Color from '../../style/Color';
+import { useState } from 'react'
+import { FlatList, Image, Text, View } from 'react-native'
+import Style from '../../style/Style'
+import Color from '../../style/Color'
 
 export default HomeScreen = ({}) => {
     const [movies, setMovies] = useState([
@@ -10,7 +10,7 @@ export default HomeScreen = ({}) => {
         { id: '3', title: 'Movie 3', image: '' },
         { id: '4', title: 'Movie 4', image: '' },
         { id: '5', title: 'Movie 5', image: '' },
-    ]);
+    ])
 
     return (
         <View style={Style.container}>
@@ -30,5 +30,5 @@ export default HomeScreen = ({}) => {
                 keyExtractor={(item) => item.id}
             />
         </View>
-    );
-};
+    )
+}

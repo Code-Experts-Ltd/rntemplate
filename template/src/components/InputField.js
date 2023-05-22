@@ -1,8 +1,8 @@
-import react from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
-import Color from '../style/Color';
-import Style from '../style/Style';
-import Spacing from './Spacing';
+import react from 'react'
+import { StyleSheet, Text, TextInput, View } from 'react-native'
+import Color from '../style/Color'
+import Style from '../style/Style'
+import Spacing from './Spacing'
 
 export default InputField = ({
     label,
@@ -34,8 +34,8 @@ export default InputField = ({
                 </>
             )}
         </>
-    );
-};
+    )
+}
 
 const style = StyleSheet.create({
     container: {
@@ -46,4 +46,4 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: 10,
     },
-});
+})

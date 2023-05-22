@@ -1,15 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import Color from '../style/Color';
-import Style from '../style/Style';
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import Color from '../style/Color'
+import Style from '../style/Style'
 
 export default SecondaryButton = ({ onPress, children }) => {
     return (
         <TouchableOpacity style={ButtonStyle.container} onPress={onPress}>
             <Text style={[Style.fontBold, ButtonStyle.label]}>{children}</Text>
         </TouchableOpacity>
-    );
-};
+    )
+}
 
 const ButtonStyle = StyleSheet.create({
     container: {
@@ -27,4 +27,4 @@ const ButtonStyle = StyleSheet.create({
         color: Color.primary,
         fontSize: 16,
     },
-});
+})
