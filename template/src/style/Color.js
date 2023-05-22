@@ -5,4 +5,4 @@ export default Color = {
     white: '#fff',
     red: 'red',
     background: '#A4AAC9',
-}
+};

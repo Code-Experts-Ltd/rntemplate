@@ -1,7 +1,7 @@
-import react from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import Color from '../style/Color'
-import Style from '../style/Style'
+import react from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Color from '../style/Color';
+import Style from '../style/Style';
 
 export default PrimaryButton = ({ onPress, children }) => {
     return (
@@ -10,8 +10,8 @@ export default PrimaryButton = ({ onPress, children }) => {
                 <Text style={[Style.label, Style.colorWhite]}>{children}</Text>
             </TouchableOpacity>
         </>
-    )
-}
+    );
+};
 
 const style = StyleSheet.create({
     container: {
@@ -20,4 +20,4 @@ const style = StyleSheet.create({
         borderRadius: 10,
         alignItems: 'center',
     },
-})
+});

@@ -1,9 +1,9 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import ForgotScreen from '../views/auth/ForgotScreen'
-import LoginScreen from '../views/auth/LoginScreen'
-import SignupScreen from '../views/auth/SignupScreen'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ForgotScreen from '../views/auth/ForgotScreen';
+import LoginScreen from '../views/auth/LoginScreen';
+import SignupScreen from '../views/auth/SignupScreen';
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 
 export default AuthRouter = () => {
     return (
@@ -30,5 +30,5 @@ export default AuthRouter = () => {
                 component={ForgotScreen}
             />
         </Stack.Navigator>
-    )
-}
+    );
+};

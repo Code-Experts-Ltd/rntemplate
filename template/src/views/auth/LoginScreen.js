@@ -1,61 +1,61 @@
-import { useNavigation } from '@react-navigation/native'
-import react, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native';
+import react, { useState } from 'react';
 import {
     ActivityIndicator,
     Text,
     TextInput,
     TouchableOpacity,
     View,
-} from 'react-native'
-import ErrorLabel from '../../components/ErrorLabel'
-import InputField from '../../components/InputField'
-import PrimaryButton from '../../components/PrimaryButton'
-import Spacing from '../../components/Spacing'
-import { Post } from '../../network/network'
-import Style from '../../style/Style'
-import { validateEmail, validatePassword } from '../../utils/common'
+} from 'react-native';
+import ErrorLabel from '../../components/ErrorLabel';
+import InputField from '../../components/InputField';
+import PrimaryButton from '../../components/PrimaryButton';
+import Spacing from '../../components/Spacing';
+import { Post } from '../../network/network';
+import Style from '../../style/Style';
+import { validateEmail, validatePassword } from '../../utils/common';
 
 export default LoginScreen = ({}) => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
 
-    const [validation, setValidation] = useState(false)
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [loading, setLoading] = useState()
-    const [error, setError] = useState()
+    const [validation, setValidation] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState();
+    const [error, setError] = useState();
 
     const onLogin = ({}) => {
-        navigation.navigate('HomeTabs')
-        return
+        navigation.navigate('HomeTabs');
+        return;
         if (!validateEmail(email) || !validatePassword(password)) {
-            setValidation(true)
-            return
+            setValidation(true);
+            return;
         }
 
-        console.log('Here')
+        console.log('Here');
 
-        setValidation(false)
-        setError(false)
-        setLoading(true)
+        setValidation(false);
+        setError(false);
+        setLoading(true);
 
-        const endpoint = '/login'
+        const endpoint = '/login';
         const data = {
             email,
             password,
-        }
+        };
         Post('/login', data)
             .then((response) => {
-                setLoading(false)
-                console.log('Response', response)
+                setLoading(false);
+                console.log('Response', response);
             })
             .catch((error) => {
-                setLoading(false)
+                setLoading(false);
                 if (error.response) {
-                    console.log(error.response.data)
-                    setError(error.response.data.message)
+                    console.log(error.response.data);
+                    setError(error.response.data.message);
                 }
-            })
-    }
+            });
+    };
 
     return (
         <View style={[Style.container, Style.centerJustify]}>
@@ -66,7 +66,7 @@ export default LoginScreen = ({}) => {
                     keyboard={'email-address'}
                     value={email}
                     onChangeText={(text) => {
-                        setEmail(text)
+                        setEmail(text);
                     }}
                     error={
                         validation && !validateEmail(email)
@@ -81,7 +81,7 @@ export default LoginScreen = ({}) => {
                     keyboard={'default'}
                     value={password}
                     onChangeText={(text) => {
-                        setPassword(text)
+                        setPassword(text);
                     }}
                     secureTextEntry={true}
                     error={
@@ -93,10 +93,9 @@ export default LoginScreen = ({}) => {
                 <Spacing val={10} />
                 <TouchableOpacity
                     onPress={() => {
-                        navigation.navigate('ForgotPassword')
+                        navigation.navigate('ForgotPassword');
                     }}
-                    style={{ alignItems: 'flex-end' }}
-                >
+                    style={{ alignItems: 'flex-end' }}>
                     <Text style={[Style.label, Style.colorSecondary]}>
                         Forgot Password
                     </Text>
@@ -119,8 +118,7 @@ export default LoginScreen = ({}) => {
                 <Spacing val={20} />
                 <TouchableOpacity
                     onPress={() => navigation.navigate('Signup')}
-                    style={{ alignItems: 'center' }}
-                >
+                    style={{ alignItems: 'center' }}>
                     <Text>
                         <Text style={[Style.label, Style.colorPrimary]}>
                             Do not have an account?{' '}
@@ -130,13 +128,12 @@ export default LoginScreen = ({}) => {
                                 Style.label,
                                 Style.colorPrimary,
                                 Style.fontBold,
-                            ]}
-                        >
+                            ]}>
                             Signup
                         </Text>
                     </Text>
                 </TouchableOpacity>
             </View>
         </View>
-    )
-}
+    );
+};

@@ -1,8 +1,8 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeScreen from '../views/home/HomeScreen'
-import SettingScreen from '../views/home/SettingScreen'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from '../views/home/HomeScreen';
+import SettingScreen from '../views/home/SettingScreen';
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
 
 export default HomeTabs = () => {
     return (
@@ -18,5 +18,5 @@ export default HomeTabs = () => {
                 options={{ headerShown: false }}
             />
         </Tab.Navigator>
-    )
-}
+    );
+};

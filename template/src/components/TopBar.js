@@ -1,5 +1,5 @@
-import { useNavigation } from '@react-navigation/native'
-import React from 'react'
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
 import {
     Image,
     StatusBar,
@@ -7,14 +7,14 @@ import {
     Text,
     TouchableOpacity,
     View,
-} from 'react-native'
-import Logo from '../assets/logo.svg'
-import Color from '../style/Color'
+} from 'react-native';
+import Logo from '../assets/logo.svg';
+import Color from '../style/Color';
 
 export default TopBar = ({ onPress, onSkip }) => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
 
-    const onClick = () => navigation.goBack()
+    const onClick = () => navigation.goBack();
     return (
         <View style={Style.container}>
             <TouchableOpacity onPress={onPress || onClick}>
@@ -24,13 +24,12 @@ export default TopBar = ({ onPress, onSkip }) => {
             <Logo />
             <TouchableOpacity
                 style={{ opacity: onSkip ? 1 : 0 }}
-                onPress={onSkip}
-            >
+                onPress={onSkip}>
                 <Text>Skip</Text>
             </TouchableOpacity>
         </View>
-    )
-}
+    );
+};
 
 const Style = StyleSheet.create({
     container: {
@@ -50,4 +49,4 @@ const Style = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 1,
     },
-})
+});

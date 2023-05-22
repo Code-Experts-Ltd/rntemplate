@@ -1,5 +1,5 @@
-import { useNavigation } from '@react-navigation/native'
-import react, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native';
+import react, { useState } from 'react';
 import {
     ActivityIndicator,
     SafeAreaView,
@@ -7,65 +7,64 @@ import {
     TextInput,
     TouchableOpacity,
     View,
-} from 'react-native'
-import ErrorLabel from '../../components/ErrorLabel'
-import InputField from '../../components/InputField'
-import PrimaryButton from '../../components/PrimaryButton'
-import Spacing from '../../components/Spacing'
-import TopBar from '../../components/TopBar'
-import { Post } from '../../network/network'
-import Style from '../../style/Style'
-import { validateEmail, validatePassword } from '../../utils/common'
+} from 'react-native';
+import ErrorLabel from '../../components/ErrorLabel';
+import InputField from '../../components/InputField';
+import PrimaryButton from '../../components/PrimaryButton';
+import Spacing from '../../components/Spacing';
+import TopBar from '../../components/TopBar';
+import { Post } from '../../network/network';
+import Style from '../../style/Style';
+import { validateEmail, validatePassword } from '../../utils/common';
 
 export default LoginScreen = ({}) => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
 
-    const [validation, setValidation] = useState(false)
-    const [email, setEmail] = useState('')
-    const [loading, setLoading] = useState()
-    const [error, setError] = useState()
+    const [validation, setValidation] = useState(false);
+    const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState();
+    const [error, setError] = useState();
 
     const onForgotPassword = ({}) => {
         if (!validateEmail(email)) {
-            setValidation(true)
-            return
+            setValidation(true);
+            return;
         }
 
-        setValidation(false)
-        setError(false)
-        setLoading(true)
+        setValidation(false);
+        setError(false);
+        setLoading(true);
 
-        const endpoint = '/forgot-password'
+        const endpoint = '/forgot-password';
         const data = {
             email,
-        }
+        };
         Post(endpoint, data)
             .then((response) => {
-                setLoading(false)
-                console.log('Response', response)
+                setLoading(false);
+                console.log('Response', response);
             })
             .catch((error) => {
-                setLoading(false)
+                setLoading(false);
                 if (error.response) {
-                    console.log(error.response.data)
-                    setError(error.response.data.message)
+                    console.log(error.response.data);
+                    setError(error.response.data.message);
                 }
-            })
-    }
+            });
+    };
 
     return (
         <SafeAreaView style={[Style.container]}>
             <TopBar onPress={() => navigation.goBack()} />
             <View
-                style={[Style.container, Style.hPadding, Style.centerJustify]}
-            >
+                style={[Style.container, Style.hPadding, Style.centerJustify]}>
                 <InputField
                     label={'Email'}
                     placeholder='example@gmail.com'
                     keyboard={'email-address'}
                     value={email}
                     onChangeText={(text) => {
-                        setEmail(text)
+                        setEmail(text);
                     }}
                     error={
                         validation && !validateEmail(email)
@@ -92,5 +91,5 @@ export default LoginScreen = ({}) => {
                 </PrimaryButton>
             </View>
         </SafeAreaView>
-    )
-}
+    );
+};

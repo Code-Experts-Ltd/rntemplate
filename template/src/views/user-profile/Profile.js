@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
     Image,
     KeyboardAvoidingView,
@@ -10,54 +10,53 @@ import {
     View,
     ActivityIndicator,
     Animated,
-} from 'react-native'
-import Spacing from '../../components/Spacing'
-import TopBar from '../../components/TopBar'
-import Style from '../../style/Style'
-import EditIcon from '../../assets/edit-icon.svg'
-import SecondaryButton from '../../components/SecondaryButton'
-import PrimaryButton from '../../components/PrimaryButton'
-import { useNavigation } from '@react-navigation/native'
-import { useSelector } from 'react-redux'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { launchImageLibrary } from 'react-native-image-picker'
-import Color from '../../style/Color'
-import InputField from '../../components/InputField'
-import { setUser } from '../../app/userSlice'
+} from 'react-native';
+import Spacing from '../../components/Spacing';
+import TopBar from '../../components/TopBar';
+import Style from '../../style/Style';
+import EditIcon from '../../assets/edit-icon.svg';
+import SecondaryButton from '../../components/SecondaryButton';
+import PrimaryButton from '../../components/PrimaryButton';
+import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { launchImageLibrary } from 'react-native-image-picker';
+import Color from '../../style/Color';
+import InputField from '../../components/InputField';
+import { setUser } from '../../app/userSlice';
 
 export default Profile = () => {
-    const navigation = useNavigation()
-    const dispatch = useDispatch()
-    const user = useSelector((state) => state.user.user)
+    const navigation = useNavigation();
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user.user);
 
-    const [fullName, setFullName] = useState(user.name)
-    const [email, setEmail] = useState(user.email)
-    const [mobileNumber, setMobileNumber] = useState(user.mobile)
+    const [fullName, setFullName] = useState(user.name);
+    const [email, setEmail] = useState(user.email);
+    const [mobileNumber, setMobileNumber] = useState(user.mobile);
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, SetError] = useState()
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, SetError] = useState();
 
     const pickImage = async () => {
         const result = await launchImageLibrary({
             mediaType: 'photo',
             selectionLimit: 1,
-        })
+        });
 
-        console.log('Result', result)
-        const { assets } = result
+        console.log('Result', result);
+        const { assets } = result;
         if (assets && assets.length > 0) {
-            const { uri } = assets[0]
+            const { uri } = assets[0];
         }
-    }
+    };
 
     return (
         <SafeAreaView style={[Style.container]}>
             <TopBar />
             <ScrollView>
                 <KeyboardAvoidingView
-                    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                >
+                    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
                     <View style={Style.hPadding}>
                         <Spacing val={20} />
                         <Text
@@ -65,8 +64,7 @@ export default Profile = () => {
                                 Style.fontBold,
                                 Style.colorPrimary,
                                 Style.heading,
-                            ]}
-                        >
+                            ]}>
                             Profile
                         </Text>
                         <Spacing val={20} />
@@ -79,8 +77,7 @@ export default Profile = () => {
                                     height: 70,
                                     borderRadius: 50,
                                 },
-                            ]}
-                        >
+                            ]}>
                             <Image
                                 style={[
                                     Style.profileImage,
@@ -103,13 +100,11 @@ export default Profile = () => {
                                     left: 0,
                                     right: -12,
                                     position: 'absolute',
-                                }}
-                            >
+                                }}>
                                 <TouchableOpacity
                                     onPress={() => {
-                                        pickImage()
-                                    }}
-                                >
+                                        pickImage();
+                                    }}>
                                     <View
                                         style={{
                                             borderRadius: 15,
@@ -117,8 +112,7 @@ export default Profile = () => {
                                             backgroundColor: Color.white,
                                             borderWidth: 2,
                                             borderColor: Color.background,
-                                        }}
-                                    >
+                                        }}>
                                         <EditIcon />
                                     </View>
                                 </TouchableOpacity>
@@ -131,7 +125,7 @@ export default Profile = () => {
                             placeholder={'Enter full name...'}
                             keyboard={'default'}
                             onChangeText={(text) => {
-                                setFullName(text)
+                                setFullName(text);
                             }}
                             value={fullName}
                         />
@@ -143,7 +137,7 @@ export default Profile = () => {
                             keyboard={'email-address'}
                             disable={true}
                             onChangeText={(text) => {
-                                setEmail(text)
+                                setEmail(text);
                             }}
                             value={email}
                         />
@@ -155,7 +149,7 @@ export default Profile = () => {
                             keyboard={'phone-pad'}
                             disable={true}
                             onChangeText={(text) => {
-                                setMobileNumber(text)
+                                setMobileNumber(text);
                             }}
                             value={mobileNumber}
                         />
@@ -163,9 +157,8 @@ export default Profile = () => {
 
                         <SecondaryButton
                             onPress={() => {
-                                navigation.navigate('ResetPassword')
-                            }}
-                        >
+                                navigation.navigate('ResetPassword');
+                            }}>
                             Reset Password
                         </SecondaryButton>
                         <Spacing val={15} />
@@ -173,14 +166,13 @@ export default Profile = () => {
                         <PrimaryButton
                             disabled
                             onPress={() => {
-                                let user = {
+                                const user = {
                                     name: fullName,
                                     email,
                                     mobile: mobileNumber,
-                                }
-                                dispatch(setUser(user))
-                            }}
-                        >
+                                };
+                                dispatch(setUser(user));
+                            }}>
                             Save
                         </PrimaryButton>
                         <Spacing val={20} />
@@ -193,5 +185,5 @@ export default Profile = () => {
                 </View>
             )}
         </SafeAreaView>
-    )
-}
+    );
+};

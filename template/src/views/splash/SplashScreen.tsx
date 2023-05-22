@@ -27,7 +27,7 @@ const SplashScreen = ({}) => {
     })
     return (
         <>
-            <View style={style.container}></View>
+            <View style={style.container} />
         </>
     )
 }

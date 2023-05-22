@@ -1,28 +1,26 @@
-import React, { useState } from 'react'
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
-import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
-import { DrawerActions, useNavigation } from '@react-navigation/native'
-import Style from '../style/Style'
-import Spacing from './Spacing'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
+import Style from '../style/Style';
+import Spacing from './Spacing';
+import { useSelector } from 'react-redux';
 
 const MyDrawer = (props) => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
 
-    const user = useSelector((state) => state.user.user)
+    const user = useSelector((state) => state.user.user);
 
     return (
         <DrawerContentScrollView {...props}>
             <View style={{ flex: 1, paddingTop: 20, marginLeft: 20 }}>
                 <TouchableOpacity
                     onPress={() => {
-                        navigation.dispatch(DrawerActions.closeDrawer())
-                        navigation.navigate('Profile')
-                    }}
-                >
+                        navigation.dispatch(DrawerActions.closeDrawer());
+                        navigation.navigate('Profile');
+                    }}>
                     <View
-                        style={{ flexDirection: 'row', alignItems: 'center' }}
-                    >
+                        style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Image
                             source={{
                                 uri: 'https://cdn.pixabay.com/photo/2020/10/11/19/51/cat-5646889_1280.jpg',
@@ -47,7 +45,7 @@ const MyDrawer = (props) => {
                 />
             </ScrollView>
         </DrawerContentScrollView>
-    )
-}
+    );
+};
 
-export default MyDrawer
+export default MyDrawer;
